@@ -25,7 +25,7 @@ function CvPreview({ formData }) {
                     const filledEntries = Object.entries(sectionData).filter(([, value]) => value);
 
                     return filledEntries.length > 0 ? (
-                        <div key={sectionName} id={`data-${sectionName}`} style={{padding:"1.5rem"}}>
+                        <div key={sectionName} id={`data-${sectionName}`} style={{padding:"1.5rem"}} className="cv-data">
                             {renderSectionHeading(sectionName) && (
                             <h2>{renderSectionHeading(sectionName)}</h2>
                             )}
