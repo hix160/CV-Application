@@ -3,6 +3,7 @@
 #cv-preview {
     grid-row: 1/9;
     grid-column: 2;
+    max-width: 50vw;
     background-color:#e0e1dd;
     border: 2px solid black;
 }
@@ -51,7 +52,7 @@
     text-align: left;
 }
 
-#data-workData > #dateFrom, #data-educationData > #dateFrom{
+#data-workData > #jobDate, #data-educationData > #schoolDate{
     grid-area: 2/1;
 }
 

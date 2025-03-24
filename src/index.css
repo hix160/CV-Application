@@ -31,11 +31,21 @@ body {
   margin: 0; 
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+  
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
 #root > div {
   
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 0.5fr 1fr 1fr;
+  display: flex;
+  gap: 2rem;
+  border-radius: 1rem;
+  
 }
 
 h1 {

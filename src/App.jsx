@@ -14,13 +14,13 @@ function App() {
     workData: {
       previousJob: "Software Engineer",
       jobDescription: "I was responsible for planning and developing software solutions and web applications, supporting and maintaining a company’s websites and digital products. The day-to-day work of the web developer highly depends on constantly evolving internet innovations. ",
-      dateFrom: "2015-06-01",
+      jobDate: "2015-06-01",
       jobAddress: "Tech Corp, 456 Tech Blvd",
     },
     educationData: {
       school: "Tech University",
       degree: "Bachelor's in Computer Science",
-      dateFrom: "2010-09-01",
+      schoolDate: "2010-09-01",
       schoolAddress: "Tech University, 789 University Ave",
     },
   });
@@ -48,31 +48,36 @@ function App() {
 
   return (
     <div>
-      <h1>CV Application</h1>
+      <div id='input-fields'>
+        <h1>CV Application</h1>
 
-      <GeneralSection
-        sectionTitle="Personal info"
-        sectionKey="generalData"
-        fieldsConfig={fieldsConfig}
-        formData={formData.generalData}
-        setFormData={setFormData}
-      />
+        <GeneralSection
+          sectionTitle="Personal info"
+          sectionKey="generalData"
+          fieldsConfig={fieldsConfig}
+          formData={formData.generalData}
+          setFormData={setFormData}
+        />
 
-      <GeneralSection
-        sectionTitle="Work Experience"
-        sectionKey="workData"
-        fieldsConfig={jobFieldsConfig}
-        formData={formData.workData}
-        setFormData={setFormData}
-      />
+        
 
-      <GeneralSection
-        sectionTitle="Education"
-        sectionKey="educationData"
-        fieldsConfig={schoolFieldsConfig}
-        formData={formData.educationData}
-        setFormData={setFormData}
-      />
+        <GeneralSection
+          sectionTitle="Work Experience"
+          sectionKey="workData"
+          fieldsConfig={jobFieldsConfig}
+          formData={formData.workData}
+          setFormData={setFormData}
+        />
+
+        <GeneralSection
+          sectionTitle="Education"
+          sectionKey="educationData"
+          fieldsConfig={schoolFieldsConfig}
+          formData={formData.educationData}
+          setFormData={setFormData}
+        />
+      </div>
+      
 
       <CvPreview formData={formData} />
     </div>

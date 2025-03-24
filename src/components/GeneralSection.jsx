@@ -20,7 +20,7 @@ function GeneralSection({ sectionTitle, sectionKey, fieldsConfig, formData, setF
     };
   
     return (
-      <div id={`input-${sectionKey}`} style={{padding:"1rem"}}>
+      <div id={`input-${sectionKey}`} >
         <h2>{sectionTitle}</h2>
         {fieldsConfig.map((field) => (
           <div key={field.name}>
