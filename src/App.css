@@ -36,6 +36,12 @@ input {
   border-radius: 0.3rem;
 }
 
+button > img {
+  max-width: 36px;
+  max-height: 36px;
+}
+
+
 
 
 

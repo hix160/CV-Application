@@ -2,6 +2,9 @@ import { useState } from 'react';
 import GeneralSection from './components/GeneralSection';
 import CvPreview from './components/CvPreview';
 import './App.css';
+import workImg from'./assets/work.png';
+import educationImg from './assets/education.png'
+import arrowImg from'./assets/arrow.png';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -24,6 +27,9 @@ function App() {
       schoolAddress: "Tech University, 789 University Ave",
     },
   });
+
+  const[isOpen1, setIsOpen1] = useState(false);
+  const[isOpen2, setIsOpen2] = useState(false);
 
   const fieldsConfig = [
     { name: "fullName", label: "Full Name", type: "text", placeholder: "Enter your full name", required: true },
@@ -58,24 +64,38 @@ function App() {
           formData={formData.generalData}
           setFormData={setFormData}
         />
-
         
-
-        <GeneralSection
+        <button className='drop-down' onClick={()=>setIsOpen1(!isOpen1)}>
+          <img className='icon' src={workImg} alt="" />
+          <p>Work Experience</p>
+          <img className={isOpen1? 'arrow active' : 'arrow'} src={arrowImg} alt="" />
+        </button>
+        {isOpen1 && (
+          <GeneralSection
           sectionTitle="Work Experience"
           sectionKey="workData"
           fieldsConfig={jobFieldsConfig}
           formData={formData.workData}
           setFormData={setFormData}
         />
+        )}
 
-        <GeneralSection
+        <button className='drop-down' onClick={()=>setIsOpen2(!isOpen2)}>
+          <img className='icon' src={educationImg} alt="" />
+          <p>Education</p>
+          <img className={isOpen2? 'arrow active' : 'arrow'} src={arrowImg} alt="" />
+        </button>
+        {isOpen2 && (
+          <GeneralSection
           sectionTitle="Education"
           sectionKey="educationData"
           fieldsConfig={schoolFieldsConfig}
           formData={formData.educationData}
           setFormData={setFormData}
         />
+        )}
+
+        
       </div>
       
 
